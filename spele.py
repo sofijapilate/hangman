@@ -1,7 +1,29 @@
+intro_message = """
+Laipni lūdzu spēlē "hangman" 🧍‍♂️
+
+Reiz sen senos laikos dzīvoja karaļa dēls Edmunds vienu dienu viņam piesolija nāves sodu. 
+Viņu pakāra uz striķa un kad striķi nogriezīs, viņš iekrīt ugunskurā un nodegs. 
+Bet tad karalis piedāvāja, lai kāds no iedzīvotājiem palīdz izglābt Edmundu un uzspēlē spēli.
+Tu esi izvēlētais iedzīvotājs!
+SPĒLES NOSACIJUMI👉 
+ viss ir ļoti vienkārši 
+ Tev ir jāmin vārdi kas ir paslēpti līnijās, 
+ programma pati tev jautās lai mini burtus, 
+ bet viss nav tik vienkārši tev ir tikai 6 iespējas minēt burtus,
+ ja ievadītais burts ir nepareizs tad zaudē vienu iespēju,
+ ja visas dzīvibas zaudē nu tu jau zini, kas notiks...
+ 
+Palīdzi Edmundam!
+""" 
+
+print(intro_message)
+
+
+
 words = ["skin", "order","stain","summer", "detailed","example","glib","settle","encouraging","snatch", "autumn"]
 
 import random 
-print(words)
+print("tavi dotie vārdi: ", words)
 import string
 
 def get_valid_word(words):
@@ -33,21 +55,17 @@ def hangman():
          used_letters.add(user_letter)
          if user_letter in word_letters:
             word_letters.remove(user_letter)
-
-         else:
-            lives = lives - 1
-            print("burts nav dotajā vardā")
-            
-        elif user_letter in used_letters:
-            print("tu jau esi lietojis so burtu, megini atkal")
+            print("Malacis tu uzminēji burtu!")
+         elif user_letter in used_letters:
+            print("tu jau esi lietojis so burtu, megini atkal🙃")    
         else:
-            print("nepareiz burts, meginiet atkal")
+            lives = lives - 1
+            print("burts nav dotajā vardā, tu zaudēji dzīvību😕")
             
-            if lives == 0:
-                print("tev beidzās dzīvibas")
-            else:
-                print("Tu uzvarēji")
-# seit tiek kad len(word_letters) == 0 or when lives == 0
+        if lives == 0:
+            print("tev beidzās dzīvibas, tu zaudēji😢")
+        
+
 
 hangman()
 
