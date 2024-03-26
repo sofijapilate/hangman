@@ -64,9 +64,9 @@ def hangman():
             
         if lives == 0:
             print("tev beidzās dzīvibas, tu zaudēji😢")
+        else:
+            print("Tu uzvarēji un izglābi Edmundu")
         
-
-
 hangman()
 
 
